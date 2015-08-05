@@ -34,8 +34,7 @@
                 return query_str.join("&");
             };
             var _is_post = function (method) {
-				//only supports post or get currently.
-                return /^POST/i.test(method);
+                return /^POST/i.test(method);/*only supports post or get currently.*/
             };
             //request functions
             var _get_http_request = function () {
@@ -115,25 +114,25 @@
 	
 	
 	
-	//************************************************************************************
-	// Initialization is close to $.ajax()
-	//************************************************************************************
-	function button_click_fn() {
-		//call ajax
-		ajax_handler.request({
+//************************************************************************************
+// Initialization is close to $.ajax()
+//************************************************************************************
+function button_click_fn() {
+	//call ajax
+	ajax_handler.request({
             url: '/query/end_point',
             async: false,
             method: 'GET',
             response_type: 'json',
             data: { id_value = document.getElementById('el_id').value },
             on_success: function (data) { 
-			/*Do things with data*/ 
-			},
-            on_error: function (status, error_msg) {
-               if(console) console.log('status:' + status + ' || error msg:' + error_msg);
-            }
-        });
-	}
+		/*Do things with data*/ 
+	     },
+	     on_error: function (status, error_msg) {
+	         if(console) console.log('status:' + status + ' || error msg:' + error_msg);
+	     }
+       	});
+}
 	
 	
 	
